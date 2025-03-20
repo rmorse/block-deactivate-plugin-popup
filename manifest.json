@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Block Deactivate Plugin Modal",
+  "version": "1.0",
+  "description": "A simple extension that blocks the modals that some authors add when deactivating plugins.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs",
+    "scripting",
+    "contextMenus",
+    "storage"
+  ],
+  "action": {
+    "default_title": "Block Deactivate Plugin Modal"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "./assets/icons/16.png",
+    "32": "./assets/icons/32.png",
+    "128": "./assets/icons/128.png"
+  }
+}
